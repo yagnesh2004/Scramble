@@ -94,15 +94,30 @@ let words = [
     },
 ]
 
-
-let wordChange =document.querySelector(".container");
-hintTEXT= document.querySelector(".hint span");
-inputField= document.querySelector("input");
-
-const checkWord= document.querySelector(".check-word");
-
+let correctWord,timer;
+let wordChange =document.querySelector(".container"),
+hintTEXT= document.querySelector(".hint span"),
+inputField= document.querySelector("input"),
+timeText=document.querySelector(".time b"),
+const checkWord= document.querySelector(".check-word"),
 const refreshGame= document.querySelector(".refresh-word");
+
+let initTimer =() maxTime => {
+    timer =setInterval(() =>{
+        if(maxTime>0){
+            alert("jxbjdbcjcb");
+            maxTime--;
+            timeText.innerHTML=maxTime;
+        }
+
+    },1000);
+        initTimer(30);
+
+
+}
 const initGame = () => {
+
+
     let randomObj = words[Math.floor(Math.random() * words.length)];
     let wordarray = randomObj.word.split("");
     
@@ -112,24 +127,22 @@ const initGame = () => {
         [wordarray[i],wordarray[j]
     ]=[wordarray[j],wordarray[i]];
 
-      
-
-
         
     }
     
-    
 
     hintTEXT.innerHTML = randomObj.hint;
+    correctWord=randomObj.word.toLocaleLowerCase();
   
     wordChange.querySelector(".word").innerHTML=wordarray.join("");
-
-
-
 }
 const checkFunction=() => {
-    let userWord = inputField.value.toLocalLowerCase();
-    alert(userWord);
+    let userWord = inputField.value.toLocaleLowerCase();
+    if(!userWord) return alert("Please enter a word !!")
+    if (userWord!=correctWord) return alert('Input not correct');
+    alert("Congrats !! its right answer");
+    
+    
 
 
 }
