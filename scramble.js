@@ -95,24 +95,37 @@ let words = [
 ]
 
 
-const wordChange =document.getElementById('word')
+let wordChange =document.querySelector(".container");
+hintTEXT= document.querySelector(".hint span");
 const initGame = () => {
     let randomObj = words[Math.floor(Math.random() * words.length)];
     let wordarray = randomObj.word.split("");
+    alert(wordarray)
     for (let i=wordarray.length-1; i>0; i--){
         let j=Math.floor(Math.random()* (i+1));
-        [wordarray[i],wordarray[j]]=[wordarray[j],wordarray[i]];
+        [wordarray[i],wordarray[j]
+    ]=[wordarray[j],wordarray[i]];
+
+      
 
 
         
     }
-    wordChange.innerTEXT=wordarray;
-    
     alert(wordarray)
+    alert(randomObj.hint)
+
+    hintTEXT.innerTEXT = randomObj.hint;
+  
+    wordChange.querySelector(".word").innerHTML=wordarray.join("");
+
+
+
+    
+  
     
 
 
 }
 
 
-initGame()
+initGame();

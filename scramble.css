@@ -9,10 +9,25 @@
 body{
     display: flex;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
-    background-color: brown;
+    background-color: #1a1a1a;
+    justify-content: center;
     
+}
+.title{
+    color: white;
+    display: none;
+    min-height: 100vh;
+    text-align: center;
+    justify-content: center;
+    align-items: top;
+    margin: 50px 3px 20px;
+
+}
+.title h2{
+    font-weight: 700;
+    font-size: 70px;
+    padding: 15px 25px;
 }
 .container{
     width: 450px;
@@ -75,8 +90,8 @@ body{
     outline: none;
     padding: 15px 0px;
     border-radius: 5px;
-    color: white;
-    font-size: 17px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
     width: calc(100%/2 - 8px);
 
 }
@@ -92,12 +107,12 @@ body{
     background-color: #4b4e52;
 }
 .buttons .check-word{
-    background-color: #5145fa;
+    background-color: #08b74f;
 }
 .buttons .check-word:hover{
     
     transition: 0.2s;
 }
 .buttons .check-word:focus{
-    background-color: #150c94;
+    background-color: #078f3e;
 }
