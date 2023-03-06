@@ -97,10 +97,16 @@ let words = [
 
 let wordChange =document.querySelector(".container");
 hintTEXT= document.querySelector(".hint span");
+inputField= document.querySelector("input");
+
+const checkWord= document.querySelector(".check-word");
+
+const refreshGame= document.querySelector(".refresh-word");
 const initGame = () => {
     let randomObj = words[Math.floor(Math.random() * words.length)];
     let wordarray = randomObj.word.split("");
-    alert(wordarray)
+    
+
     for (let i=wordarray.length-1; i>0; i--){
         let j=Math.floor(Math.random()* (i+1));
         [wordarray[i],wordarray[j]
@@ -111,21 +117,28 @@ const initGame = () => {
 
         
     }
-    alert(wordarray)
-    alert(randomObj.hint)
+    
+    
 
-    hintTEXT.innerTEXT = randomObj.hint;
+    hintTEXT.innerHTML = randomObj.hint;
   
     wordChange.querySelector(".word").innerHTML=wordarray.join("");
 
 
 
-    
-  
-    
+}
+const checkFunction=() => {
+    let userWord = inputField.value.toLocalLowerCase();
+    alert(userWord);
 
 
 }
 
 
 initGame();
+refreshGame.addEventListener("click",initGame);
+checkWord.addEventListener("click",checkFunction);
+
+
+
+
