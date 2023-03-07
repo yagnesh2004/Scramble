@@ -1,109 +1,143 @@
 
-let words = [
+const words = [
     {
-        word: "addition",
-        hint: "The process of adding numbers"
+      word: "Baahubali",
+      hint: "Kattappa ne Baahubali ko kyun maara?"
     },
     {
-        word: "meeting",
-        hint: "Event in which people come together"
+      word: "Arjun Reddy",
+      hint: "What's wrong with me drinking?"
     },
     {
-        word: "number",
-        hint: "Math symbol used for counting"
+      word: "Rangasthalam",
+      hint: "Jigelu Rani"
     },
     {
-        word: "exchange",
-        hint: "The act of trading"
+      word: "Ala Vaikunthapurramuloo",
+      hint: "Butta Bomma"
     },
     {
-        word: "canvas",
-        hint: "Piece of fabric for oil painting"
+      word: "Jersey",
+      hint: "I am not a failure"
     },
     {
-        word: "garden",
-        hint: "Space for planting flower and plant"
+      word: "Maharshi",
+      hint: "Rishi, mee intiki vaste.. munduku vastha!"
     },
     {
-        word: "position",
-        hint: "Location of someone or something"
+      word: "Sarkar",
+      hint: "Oru viral puratchi!"
     },
     {
-        word: "feather",
-        hint: "Hair like outer covering of bird"
+      word: "Geetha Govindam",
+      hint: "What The F"
     },
     {
-        word: "comfort",
-        hint: "A pleasant feeling of relaxation"
+      word: "Sye Raa Narasimha Reddy",
+      hint: "Uyyalawada Narasimha Reddy"
     },
     {
-        word: "tongue",
-        hint: "The muscular organ of mouth"
+      word: "Dear Comrade",
+      hint: "Fight For What You Love"
     },
     {
-        word: "expansion",
-        hint: "The process of increase or grow"
+      word: "Fidaa",
+      hint: "Hey Pillagaada"
     },
     {
-        word: "country",
-        hint: "A politically identified region"
+      word: "Mahanati",
+      hint: "Savitri garu mana intiki enter ayyaru"
     },
     {
-        word: "group",
-        hint: "A number of objects or persons"
+      word: "Bharat Ane Nenu",
+      hint: "I don't break promises"
     },
     {
-        word: "taste",
-        hint: "Ability of tongue to detect flavour"
+      word: "Athadu",
+      hint: "Parugulu Theeyi"
     },
     {
-        word: "store",
-        hint: "Large shop where goods are traded"
+      word: "Nannaku Prematho",
+      hint: "Follow The Leader"
     },
     {
-        word: "field",
-        hint: "Area of land for farming activities"
+      word: "Pokiri",
+      hint: "Eenadu.. choodamani undi!"
     },
     {
-        word: "friend",
-        hint: "Person other than a family member"
+      word: "Chatrapathi",
+      hint: "Kalam Maarindi"
     },
     {
-        word: "pocket",
-        hint: "A bag for carrying small items"
+      word: "Khaidi No.150",
+      hint: "Boss Is Back"
     },
     {
-        word: "needle",
-        hint: "A thin and sharp metal pin"
+      word: "Gabbar Singh",
+      hint: "Naku konchem tikkundi leda.. kani daniki konchem thikkundi"
     },
     {
-        word: "expert",
-        hint: "Person with extensive knowledge"
+      word: "Jalsa",
+      hint: "Pawan Kalyan Babu!"
     },
     {
-        word: "statement",
-        hint: "A declaration of something"
+      word: "Magadheera",
+      hint: "Mokkuthi Ammavaru"
     },
     {
-        word: "second",
-        hint: "One-sixtieth of a minute"
+      word: "Manam",
+      hint: "Enti.. meeru em chestunnaru?"
     },
     {
-        word: "library",
-        hint: "Place containing collection of books"
+      word: "I",
+      hint: "Beauty.. And the Beast"
     },
+    {
+      word: "S/O Satyamurthy",
+      hint: "Super Machi"
+    },
+    {
+      word: "Gang Leader",
+      hint: "Ra Ra.. Oh.. Andam Chudavante.. Andistha.."
+    },
+    {
+      word: "Jaanu",
+      hint: "Rekkalu vachcheney.. rendu rekkalu vachcheney"
+    },
+    {
+      word: "Aarya",
+      hint: "Aarya.. I love you"
+    },
+    {
+      word: "Vikramarkudu",
+      hint: "Naa Peru Vikramarkudu.. Meru enduku ra?"
+    }
+  
 ]
 
 let correctWord,timer;
 let wordChange =document.querySelector(".container");
 hintTEXT= document.querySelector(".hint span");
+
 inputField= document.querySelector("input");
-timeText=document.querySelector(".time b");
+timeText=document.querySelector(".timer b");
 const checkWord= document.querySelector(".check-word");
 const refreshGame= document.querySelector(".refresh-word");
 
+const initTimer =() => {
+    timer =setInterval(() => {
+        if(maxTime > 0){
+            maxTime--;
+            timeTEXT.innerHTML=maxTime;
+        }
+    },1000);    
+
+
+
+}
 
 const initGame = () => {
+    initTimer(30);
 
 
 
