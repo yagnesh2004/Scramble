@@ -95,27 +95,18 @@ let words = [
 ]
 
 let correctWord,timer;
-let wordChange =document.querySelector(".container"),
-hintTEXT= document.querySelector(".hint span"),
-inputField= document.querySelector("input"),
-timeText=document.querySelector(".time b"),
-const checkWord= document.querySelector(".check-word"),
+let wordChange =document.querySelector(".container");
+hintTEXT= document.querySelector(".hint span");
+inputField= document.querySelector("input");
+timeText=document.querySelector(".time b");
+const checkWord= document.querySelector(".check-word");
 const refreshGame= document.querySelector(".refresh-word");
 
-let initTimer =() maxTime => {
-    timer =setInterval(() =>{
-        if(maxTime>0){
-            alert("jxbjdbcjcb");
-            maxTime--;
-            timeText.innerHTML=maxTime;
-        }
 
-    },1000);
-        initTimer(30);
-
-
-}
 const initGame = () => {
+
+
+
 
 
     let randomObj = words[Math.floor(Math.random() * words.length)];
